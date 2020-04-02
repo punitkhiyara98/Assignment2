@@ -4,19 +4,24 @@ const thumbBar = document.querySelector(".thumb-bar");
 const btn = document.querySelector("button");
 const overlay = document.querySelector(".overlay");
 
+/* Display Image Function */
+
+function display(c) {
+  displayedImage.src = c.target.src;
+};
+
 /* Looping through images */
 
 for (let p = 1; p <= 5; p++) {
   const newImage = document.createElement("img");
   newImage.setAttribute("src", "images/pic" + p + ".jpg");
   thumbBar.appendChild(newImage);
-  newImage.onclick = function(c) {
-    displayedImage.src = c.target.src;
-  };
+  newImage.addEventListener("click", display);
 }
-/* Wiring up the Darken/Lighten button */
 
-btn.onclick = function() {
+/* Darken/Lighten Function */
+
+function darklight() {
   const btnClass = btn.getAttribute("class");
   if (btnClass === "dark") {
     btn.setAttribute("class", "light");
@@ -28,3 +33,7 @@ btn.onclick = function() {
     overlay.style.backgroundColor = "rgba(0,0,0,0)";
   }
 };
+
+/* Wiring up the Darken/Lighten button */
+
+btn.addEventListener("click", darklight);

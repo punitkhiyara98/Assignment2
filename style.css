@@ -1,11 +1,15 @@
 h1 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
 
 body {
